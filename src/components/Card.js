@@ -1,6 +1,6 @@
 import React from "react";
 
-function Movie({ movie }) {
+function Card({ movie }) {
   const urlImg = "https://image.tmdb.org/t/p/original";
 
   return (
@@ -15,4 +15,4 @@ function Movie({ movie }) {
   );
 }
 
-export default Movie;
+export default Card;

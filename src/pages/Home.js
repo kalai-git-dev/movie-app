@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Movie from "../components/Movie";
+import Card from "../components/Card";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [movies, setMovies] = useState([]);
@@ -9,9 +10,9 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=0c768e12c4195fb75249a2aa9748f0a1&page=12"
+        "https://api.themoviedb.org/3/movie/popular?api_key=0c768e12c4195fb75249a2aa9748f0a1&page=all"
       );
-      console.log(response.data.results);
+      //   console.log(response.data.results);
       setMovies(response.data.results);
       setIsLoading(false);
     };
@@ -22,7 +23,11 @@ function Home() {
   ) : (
     <div>
       {movies.map((movie) => {
-        return <Movie key={movie.id} movie={movie} />;
+        return (
+          <Link to={`/movie/${movie.id}`} key={movie.id}>
+            <Card movie={movie} />
+          </Link>
+        );
       })}
     </div>
   );
