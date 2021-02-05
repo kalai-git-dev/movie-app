@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Credits from "../components/Credits";
 import axios from "axios";
+<<<<<<< HEAD
 import ReactStars from "react-rating-stars-component";
+=======
+>>>>>>> aa70b9baa22a13cf0ce30ab6e18dcb686a62242f
 
 function Movie() {
   const { id } = useParams();
@@ -16,7 +19,11 @@ function Movie() {
       const response = await axios.get(
         `https://api.themoviedb.org/3/movie/${id}?api_key=0c768e12c4195fb75249a2aa9748f0a1`
       );
+<<<<<<< HEAD
       console.log(response.data);
+=======
+      //   console.log(response.data);
+>>>>>>> aa70b9baa22a13cf0ce30ab6e18dcb686a62242f
       setMovie(response.data);
       setIsLoading(false);
     };
@@ -44,10 +51,13 @@ function Movie() {
     <>
       <div>
         <p>{movie.title}</p>
+<<<<<<< HEAD
         <div>
           <span>{movie.vote_average}</span>
           <ReactStars count={movie.vote_average} size={24} color="#F5ED06" />
         </div>
+=======
+>>>>>>> aa70b9baa22a13cf0ce30ab6e18dcb686a62242f
 
         <img src={urlImg + movie.poster_path} alt={movie.title} />
         <div className="infos">

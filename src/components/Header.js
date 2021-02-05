@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import { useHistory } from "react-router-dom";
 
 function Header() {
@@ -19,6 +20,14 @@ function Header() {
       >
         top Rated
       </p>
+=======
+
+function Header() {
+  return (
+    <div>
+      <p>APP MOVIES</p>
+      <input type="text" />
+>>>>>>> aa70b9baa22a13cf0ce30ab6e18dcb686a62242f
     </div>
   );
 }
