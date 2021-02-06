@@ -1,0 +1,28 @@
+.header {
+  height: 80px;
+  width: 100vw;
+  background-color: rgb(8, 8, 8);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo {
+  font-size: 30px;
+  color: antiquewhite;
+}
+.navigation a {
+  text-decoration: none;
+  color: aqua;
+  font-size: 25px;
+  font-weight: bold;
+}
+.navigation a:nth-child(1) {
+  margin-right: 45px;
+}
+.navigation a:hover {
+  color: rgb(171, 46, 209);
+}
+.selected {
+  border-top: 3px solid rgb(240, 236, 22);
+  transition: border-top 0.5s ease-in-out;
+}

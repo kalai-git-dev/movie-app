@@ -28,11 +28,7 @@ function Credits() {
       <div className="credits">
         {credits.cast.slice(0, 4).map((credit) => {
           return (
-<<<<<<< HEAD
             <div key={credit.id}>
-=======
-            <div>
->>>>>>> aa70b9baa22a13cf0ce30ab6e18dcb686a62242f
               <img src={urlImg + credit.profile_path} alt={credit.name} />
               <div>
                 <p> {credit.character}</p>

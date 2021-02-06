@@ -1,35 +1,37 @@
 import React from "react";
-<<<<<<< HEAD
 import ReactStars from "react-rating-stars-component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-=======
->>>>>>> aa70b9baa22a13cf0ce30ab6e18dcb686a62242f
 
 function Card({ movie }) {
   const urlImg = "https://image.tmdb.org/t/p/original";
+  const voteColor = (number) => {
+    let str = " ";
+    if (number > 7.5) {
+      str = "vote green";
+    } else if (number > 5) {
+      str = "vote orange";
+    } else {
+      str = "vote red";
+    }
+    return str;
+  };
 
   return (
-    <div key={movie.id}>
-<<<<<<< HEAD
-      <div>
-        <FontAwesomeIcon icon="star" />
-        <img
-          src={urlImg + movie.backdrop_path}
-          alt="img"
-          style={{ width: 250, height: 300, objectFit: "cover" }}
-        />
-        <p>{movie.vote_average}</p>
-      </div>
-      <p>{movie.title}</p>
-      <ReactStars count={movie.vote_average} size={24} color="#F5ED06" />
-=======
+    <div className="card" key={movie.id}>
       <img
+        className="card-image"
         src={urlImg + movie.backdrop_path}
         alt="img"
-        style={{ width: 250, height: 300, objectFit: "cover" }}
+        style={{ width: 300, height: 400, objectFit: "cover" }}
       />
-      <p>{movie.title}</p>
->>>>>>> aa70b9baa22a13cf0ce30ab6e18dcb686a62242f
+
+      <FontAwesomeIcon icon="star" className="icon-star" />
+      <p className={voteColor(movie.vote_average)}>{movie.vote_average}</p>
+
+      <p className="card-title">{movie.title}</p>
+      <div className="stars">
+        <ReactStars count={movie.vote_average} size={24} color="#F5ED06" />
+      </div>
     </div>
   );
 }

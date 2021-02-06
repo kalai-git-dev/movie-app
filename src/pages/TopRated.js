@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Card from "../components/Card";
+import { Link } from "react-router-dom";
 
 function TopRated() {
   const [topRated, setTopRated] = useState([]);
@@ -16,11 +17,15 @@ function TopRated() {
   }, []);
 
   return (
-    <>
+    <div className="container-movies">
       {topRated.map((movie) => {
-        return <Card movie={movie} key={movie.id} />;
+        return (
+          <Link to={`/movie/${movie.id}`} key={movie.id}>
+            <Card movie={movie} />
+          </Link>
+        );
       })}
-    </>
+    </div>
   );
 }
 
