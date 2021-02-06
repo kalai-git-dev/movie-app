@@ -16,15 +16,13 @@ function Movie() {
       const response = await axios.get(
         `https://api.themoviedb.org/3/movie/${id}?api_key=0c768e12c4195fb75249a2aa9748f0a1`
       );
-      console.log(response.data);
+      // console.log(response.data);
       setMovie(response.data);
       setIsLoading(false);
     };
 
     fetchData();
   }, [id]);
-
-  //   console.log(credits.cast.slice(0, 2));
 
   const countries = (production) => {
     let str = "";

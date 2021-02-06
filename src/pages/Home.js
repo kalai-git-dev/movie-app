@@ -21,7 +21,7 @@ function Home() {
     };
     fetchData();
   }, []);
-  console.log(movies);
+
   return isLoading ? (
     <p> loading</p>
   ) : (
