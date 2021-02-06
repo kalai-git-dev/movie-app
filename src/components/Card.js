@@ -22,7 +22,7 @@ function Card({ movie }) {
         className="card-image"
         src={urlImg + movie.backdrop_path}
         alt="img"
-        style={{ width: 300, height: 400, objectFit: "cover" }}
+        style={{ width: 300, height: 400 }}
       />
 
       <FontAwesomeIcon icon="star" className="icon-star" />

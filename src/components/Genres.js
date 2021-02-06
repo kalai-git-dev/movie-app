@@ -14,9 +14,13 @@ function Genres() {
     fetchData();
   }, []);
   return (
-    <div>
+    <div className="genres">
       {genres.map((genre) => {
-        return <span key={genre.id}>{genre.name}</span>;
+        return (
+          <span className="genres-item" key={genre.id}>
+            {genre.name}
+          </span>
+        );
       })}
     </div>
   );

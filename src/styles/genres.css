@@ -1,0 +1,15 @@
+.genres {
+  width: 100vw;
+  padding: 10px 20px;
+  background-color: rgb(3, 3, 3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.genres-item {
+  border: rgb(230, 220, 207) 2px solid;
+  color: antiquewhite;
+  font-weight: 500;
+  padding: 7px;
+  border-radius: 3px;
+}
