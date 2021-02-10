@@ -9,11 +9,11 @@
 }
 .logo {
   font-size: 30px;
-  color: antiquewhite;
+  color: rgb(247, 245, 242);
 }
 .navigation a {
   text-decoration: none;
-  color: aqua;
+  color: rgb(102, 219, 219);
   font-size: 25px;
   font-weight: bold;
 }
