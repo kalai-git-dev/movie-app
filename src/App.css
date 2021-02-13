@@ -4,7 +4,9 @@
 body {
   background-color: rgba(14, 13, 13, 0.479);
 }
+
 @import "./styles/header.css";
 @import "./styles/home.css";
 @import "./styles/card.css";
 @import "./styles/genres.css";
+@import "./styles/loader.css";

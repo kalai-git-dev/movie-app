@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import Card from "../components/Card";
-
+import Loader from "../components/Loader";
 import { Link } from "react-router-dom";
 import Genres from "../components/Genres";
 
@@ -23,7 +23,7 @@ function Home() {
   }, []);
 
   return isLoading ? (
-    <p> loading</p>
+    <Loader />
   ) : (
     <div>
       <Genres />
