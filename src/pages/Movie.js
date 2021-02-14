@@ -45,27 +45,34 @@ function Movie() {
         <div className="movie-body">
           <img src={urlImg + movie.poster_path} alt={movie.title} />
 
-          <div>
-            <p className="movie-tilte">{movie.title}</p>
+          <div className="movie-infos">
+            <p className="movie-title">{movie.title}</p>
             <div className="movie-rating">
-              <span>{movie.vote_average}</span>
+              <span> Vote : {movie.vote_average}</span>
               <ReactStars
                 count={movie.vote_average}
                 size={24}
                 color="#F5ED06"
               />
             </div>
-            <div className="infos">
-              <ul>
+            <div>
+              Catégories :
+              <ul className="categorie-list">
                 {movie.genres.map((genre) => {
                   return <li key={genre.id}>{genre.name}</li>;
                 })}
               </ul>
-              <p>Pays :{countries(movie.production_countries)}</p>
-              <p>Sortie : {movie.release_date}</p>
-              <p>Langues : {countries(movie.spoken_languages)}</p>
-              <p>Time : {movie.runtime} min</p>
-              <p>Description : {movie.overview}</p>
+              <p className="movie-description">
+                Pays :{countries(movie.production_countries)}
+              </p>
+              <p className="movie-date">Sortie : {movie.release_date}</p>
+              <p className="movie-languages">
+                Langues : {countries(movie.spoken_languages)}
+              </p>
+              <p className="movie-time">Time : {movie.runtime} min</p>
+              <p className="movie-description">
+                Description : {movie.overview}
+              </p>
             </div>
           </div>
         </div>

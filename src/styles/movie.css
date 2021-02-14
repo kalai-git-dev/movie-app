@@ -7,10 +7,32 @@
 }
 .movie-body {
   display: flex;
+  margin-bottom: 30px;
 }
 .movie-body img {
   width: 400px;
   height: 600px;
   margin-right: 20px;
   border-radius: 8px;
+}
+.movie-infos {
+  padding: 15px;
+}
+.movie-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+.movie-rating {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(65, 63, 63);
+  margin-bottom: 10px;
+}
+.categorie-list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.categorie-list li {
+  margin-right: 10px;
 }
