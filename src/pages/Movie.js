@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Credits from "../components/Credits";
 import axios from "axios";
 import ReactStars from "react-rating-stars-component";
+import Loader from "../components/Loader";
 
 function Movie() {
   const { id } = useParams();
@@ -37,28 +38,38 @@ function Movie() {
   };
 
   return isLoading ? (
-    <p>en chargement</p>
+    <Loader />
   ) : (
     <>
-      <div>
-        <p>{movie.title}</p>
-        <div>
-          <span>{movie.vote_average}</span>
-          <ReactStars count={movie.vote_average} size={24} color="#F5ED06" />
-        </div>
+      <div className="movie-container">
+        <div className="movie-body">
+          <img src={urlImg + movie.poster_path} alt={movie.title} />
 
-        <img src={urlImg + movie.poster_path} alt={movie.title} />
-        <div className="infos">
-          <ul>
-            {movie.genres.map((genre) => {
-              return <li key={genre.id}>{genre.name}</li>;
-            })}
-          </ul>
-          <p>Pays :{countries(movie.production_countries)}</p>
-          <p>Sortie : {movie.release_date}</p>
-          <p>Langues : {countries(movie.spoken_languages)}</p>
-          <p>Time : {movie.runtime} min</p>
-          <p>Description : {movie.overview}</p>
+          <div>
+            <p className="movie-tilte">{movie.title}</p>
+            <div className="movie-rating">
+              <span>{movie.vote_average}</span>
+              <ReactStars
+                count={movie.vote_average}
+                size={24}
+                color="#F5ED06"
+              />
+            </div>
+            <div className="infos">
+              <ul>
+                {movie.genres.map((genre) => {
+                  return <li key={genre.id}>{genre.name}</li>;
+                })}
+              </ul>
+              <p>Pays :{countries(movie.production_countries)}</p>
+              <p>Sortie : {movie.release_date}</p>
+              <p>Langues : {countries(movie.spoken_languages)}</p>
+              <p>Time : {movie.runtime} min</p>
+              <p>Description : {movie.overview}</p>
+            </div>
+          </div>
+        </div>
+        <div>
           {movie.homepage && (
             <div>
               <span>Home page :</span>

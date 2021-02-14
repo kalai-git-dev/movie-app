@@ -1,0 +1,16 @@
+.movie-container {
+  height: 100%;
+  width: 100vw;
+  background-color: rgb(7, 7, 7);
+  color: white;
+  padding: 40px;
+}
+.movie-body {
+  display: flex;
+}
+.movie-body img {
+  width: 400px;
+  height: 600px;
+  margin-right: 20px;
+  border-radius: 8px;
+}

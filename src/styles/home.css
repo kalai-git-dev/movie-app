@@ -1,7 +1,7 @@
 .container-movies {
   max-width: 80%;
   margin: 40px auto;
-  background-color: rgb(54, 50, 50);
+  background-color: rgb(3, 3, 3);
   padding: 30px 50px;
   display: flex;
   flex-wrap: wrap;
