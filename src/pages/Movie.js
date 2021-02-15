@@ -48,44 +48,57 @@ function Movie() {
           <div className="movie-infos">
             <p className="movie-title">{movie.title}</p>
             <div className="movie-rating">
-              <span> Vote : {movie.vote_average}</span>
               <ReactStars
+                className="stars"
                 count={movie.vote_average}
                 size={24}
                 color="#F5ED06"
               />
             </div>
             <div>
-              Catégories :
-              <ul className="categorie-list">
-                {movie.genres.map((genre) => {
-                  return <li key={genre.id}>{genre.name}</li>;
-                })}
-              </ul>
-              <p className="movie-description">
-                Pays :{countries(movie.production_countries)}
+              <div className="categories">
+                <span>Catégories : </span>
+                <ul className="categorie-list">
+                  {movie.genres.map((genre) => {
+                    return (
+                      <li key={genre.id}>
+                        {genre.name} <span>|</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+              <p className="movie-country">
+                <span>Pays : </span> {countries(movie.production_countries)}
               </p>
-              <p className="movie-date">Sortie : {movie.release_date}</p>
+              <p className="movie-date">
+                <span>Sortie : </span> {movie.release_date}
+              </p>
               <p className="movie-languages">
-                Langues : {countries(movie.spoken_languages)}
+                <span> Langues : </span> {countries(movie.spoken_languages)}
               </p>
-              <p className="movie-time">Time : {movie.runtime} min</p>
+              <p className="movie-time">
+                <span>Time : </span> {movie.runtime} min
+              </p>
+              <div className="movie-vote">
+                <span> Vote : </span>
+                <p>{movie.vote_average}</p>
+              </div>
               <p className="movie-description">
-                Description : {movie.overview}
+                <span>Description : </span> {movie.overview}
               </p>
             </div>
+            {movie.homepage && (
+              <div className="movie-homepage">
+                <span>Home page :</span>
+                <a href={movie.homepage} target="_blank" rel="noreferrer">
+                  {movie.homepage}
+                </a>
+              </div>
+            )}
           </div>
         </div>
-        <div>
-          {movie.homepage && (
-            <div>
-              <span>Home page :</span>
-              <a href={movie.homepage} target="_blank" rel="noreferrer">
-                {movie.homepage}
-              </a>
-            </div>
-          )}
-        </div>
+
         <hr />
         <Credits />
       </div>
