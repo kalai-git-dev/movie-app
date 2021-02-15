@@ -24,20 +24,21 @@ function Credits() {
   return isLoading ? (
     <p>en chargement....</p>
   ) : (
-    <div>
-      <div className="credits">
-        {credits.cast.slice(0, 4).map((credit) => {
-          return (
-            <div key={credit.id}>
-              <img src={urlImg + credit.profile_path} alt={credit.name} />
-              <div>
-                <p> {credit.character}</p>
-                <h3>{credit.name}</h3>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+    <div className="credits">
+      {credits.cast.slice(0, 6).map((credit) => {
+        return (
+          <div className="credit-item" key={credit.id}>
+            <img
+              className="credit-image"
+              src={urlImg + credit.profile_path}
+              alt={credit.name}
+            />
+
+            <p className="credit-character"> {credit.character}</p>
+            <h3 className="credit-name">{credit.name}</h3>
+          </div>
+        );
+      })}
     </div>
   );
 }

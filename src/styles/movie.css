@@ -60,6 +60,7 @@
 .movie-time,
 .movie-vote {
   margin-bottom: 10px;
+  line-height: 20px;
 }
 .movie-description span  ,
 .movie-country span ,
@@ -80,4 +81,12 @@
 }
 .movie-homepage a {
   color: bisque;
+}
+.acteurs {
+  color: rgb(226, 12, 12);
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 30px;
+  text-transform: uppercase;
 }

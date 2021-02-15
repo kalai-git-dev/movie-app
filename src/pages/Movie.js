@@ -100,6 +100,7 @@ function Movie() {
         </div>
 
         <hr />
+        <h2 className="acteurs">Acteurs</h2>
         <Credits />
       </div>
     </>
