@@ -20,7 +20,7 @@ function Card({ movie }) {
     <div className="card" key={movie.id}>
       <img
         className="card-image"
-        src={urlImg + movie.backdrop_path}
+        src={urlImg + movie.poster_path}
         alt="img"
         style={{ width: 300, height: 400 }}
       />

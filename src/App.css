@@ -12,3 +12,5 @@ body {
 @import "./styles/loader.css";
 @import "./styles/movie.css";
 @import "./styles/credits.css";
+@import "./styles/cardSlider.css";
+@import "./styles/bestFilm.css";

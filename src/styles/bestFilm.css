@@ -1,0 +1,13 @@
+.bestFilms__container {
+  width: 100%;
+  background-color: rgb(199, 66, 66);
+  padding: 20px;
+}
+.bestFilms__title {
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  font-size: 25px;
+  text-transform: capitalize;
+  border-bottom: blanchedalmond 2px solid;
+  margin-bottom: 15px;
+}

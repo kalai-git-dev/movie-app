@@ -5,10 +5,12 @@ import Card from "../components/Card";
 import Loader from "../components/Loader";
 import { Link } from "react-router-dom";
 import Genres from "../components/Genres";
+import BestFilms from "../components/BestFilms";
 
 function Home() {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [bestFilms, setBestFilms] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,6 +29,7 @@ function Home() {
   ) : (
     <div>
       <Genres />
+      <BestFilms bestFilms={bestFilms} setBestFilms={setBestFilms} />
       <div className="container-movies">
         {movies.map((movie) => {
           return (
