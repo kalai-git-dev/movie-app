@@ -1,6 +1,8 @@
 import "./App.css";
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import Movies from "./pages/Movies";
 import Home from "./pages/Home";
 import Header from "./components/Header";
 import Movie from "./pages/Movie";
@@ -14,7 +16,8 @@ function App() {
     <Router>
       <Header />
       <Switch>
-        <Route path="/" component={Home} exact />
+        <Route path="/acceuil" component={Home} exact />
+        <Route path="/movies" component={Movies} exact />
         <Route path="/movie/:id" component={Movie} exact />
         <Route path="/topRated" component={TopRated} exact />
       </Switch>

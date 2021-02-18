@@ -4,6 +4,7 @@ import axios from "axios";
 import Carousel, { Dots } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import CardSlider from "../components/CardSlider";
+import Loader from "./Loader";
 
 function BestFilms({ bestFilms, setBestFilms }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,13 +27,13 @@ function BestFilms({ bestFilms, setBestFilms }) {
   }, [setBestFilms]);
 
   return isLoading ? (
-    <p>en chargement....</p>
+    <Loader />
   ) : (
     <div className="bestFilms__container">
       <h2 className="bestFilms__title">meilleurs films en 2020</h2>
 
       <Carousel
-        autoPlay={3000}
+        autoPlay={7000}
         // animationSpeed={500}
         value={value}
         onChange={onChange}

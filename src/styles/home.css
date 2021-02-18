@@ -7,3 +7,17 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+#ReactBackgroundSlider {
+  height: 100% !important;
+  width: 100vw;
+}
+.banner {
+  height: 100%;
+  width: 100vw;
+}
+.banner img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: fill;
+  opacity: 0.6;
+}

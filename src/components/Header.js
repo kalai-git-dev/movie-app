@@ -9,13 +9,13 @@ function Header() {
       <p
         className="logo"
         onClick={() => {
-          history.push("/");
+          history.push("/acceuil");
         }}
       >
         APP MOVIES
       </p>
       <div className="navigation">
-        <NavLink to="/" exact activeClassName="selected">
+        <NavLink to="/movies" exact activeClassName="selected">
           MOVIES
         </NavLink>
         <NavLink to="/topRated" exact activeClassName="selected">
