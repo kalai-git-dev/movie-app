@@ -12,7 +12,7 @@ function Header() {
           history.push("/acceuil");
         }}
       >
-        APP MOVIES
+        APP <span>MOVIES</span>
       </p>
       <div className="navigation">
         <NavLink to="/movies" exact activeClassName="selected">

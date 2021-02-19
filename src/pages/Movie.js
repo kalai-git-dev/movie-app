@@ -4,11 +4,15 @@ import Credits from "../components/Credits";
 import axios from "axios";
 import ReactStars from "react-rating-stars-component";
 import Loader from "../components/Loader";
+import ReactPlayer from "react-player";
+import YouTubeIcon from "@material-ui/icons/YouTube";
 
 function Movie() {
   const { id } = useParams();
   const [movie, setMovie] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [linkYoutube, setLinkYoutube] = useState("");
+  const urlYoutube = "https://www.youtube.com/watch?v=";
 
   const urlImg = "https://image.tmdb.org/t/p/w500";
 
@@ -20,6 +24,18 @@ function Movie() {
       // console.log(response.data);
       setMovie(response.data);
       setIsLoading(false);
+    };
+
+    fetchData();
+  }, [id]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/movie/${id}/videos?api_key=0c768e12c4195fb75249a2aa9748f0a1`
+      );
+      // console.log(response.data.results[0].key);
+      setLinkYoutube(response.data.results[0].key);
+      // setIsLoading(false);
     };
 
     fetchData();
@@ -97,6 +113,20 @@ function Movie() {
               </div>
             )}
           </div>
+        </div>
+        <div className="video">
+          <div className="video__infos">
+            <p className="video__title">{movie.title}</p>
+            <YouTubeIcon fontSize="large" color="secondary">
+              youtube
+            </YouTubeIcon>
+          </div>
+          <ReactPlayer
+            controls
+            width="1200px"
+            height="800px"
+            url={urlYoutube + linkYoutube}
+          />
         </div>
 
         <hr />

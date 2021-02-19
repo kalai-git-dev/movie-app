@@ -1,5 +1,5 @@
 .container-movies {
-  max-width: 80%;
+  max-width: 90vw;
   margin: 40px auto;
   background-color: rgb(3, 3, 3);
   padding: 30px 50px;
@@ -7,17 +7,39 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
-#ReactBackgroundSlider {
-  height: 100% !important;
-  width: 100vw;
-}
 .banner {
-  height: 100%;
-  width: 100vw;
-}
-.banner img {
+  position: relative;
   width: 100vw;
   height: 100vh;
-  object-fit: fill;
-  opacity: 0.6;
+
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner__text {
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 60%;
+  padding: 40px;
+  text-align: center;
+  text-decoration: none;
+}
+.banner__text > .MuiSvgIcon-root {
+  font-size: 60px;
+  margin-top: 10px;
+  transition: transform 0.7s;
+}
+.banner__text > .MuiSvgIcon-root:hover {
+  transform: scale(1.2);
 }

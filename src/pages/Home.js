@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import axios from "axios";
 import Loader from "../components/Loader";
+import PlayCircleFilledSharpIcon from "@material-ui/icons/PlayCircleFilledSharp";
 
 function Home() {
   const [movies, setMovies] = useState([]);
@@ -34,16 +36,21 @@ function Home() {
   return isLoading ? (
     <Loader />
   ) : (
-    <div className="banner">
-      <div className="banner__left">
-        <h1>app movie</h1>
+    <>
+      <div
+        className="banner"
+        style={{ backgroundImage: `url(${urlImg}${movies[0].poster_path})` }}
+      ></div>
+      <Link to="/movies" className="banner__text">
+        <h1>APP MOVIES</h1>
         <p>
           Vous trouverez sur notre site tous les films Box-Office récemment
           sortis : Netflix, IMDB, HBO… en streaming français complet gratuit et
           illimité.
         </p>
-      </div>
-    </div>
+        <PlayCircleFilledSharpIcon color="secondary"></PlayCircleFilledSharpIcon>
+      </Link>
+    </>
   );
 }
 

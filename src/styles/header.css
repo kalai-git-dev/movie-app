@@ -10,6 +10,13 @@
 .logo {
   font-size: 30px;
   color: rgb(247, 245, 242);
+  cursor: pointer;
+  text-shadow: -1px 0 rgb(0, 0, 0), 0 1px rgb(175, 18, 18),
+    1px 0 rgb(192, 204, 21), 0 -1px rgb(160, 190, 23);
+}
+.logo > span {
+  color: #e90253;
+  font-weight: 800;
 }
 .navigation a {
   text-decoration: none;
