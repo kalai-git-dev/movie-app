@@ -22,16 +22,16 @@ function Home() {
   }, []);
   const urlImg = "https://image.tmdb.org/t/p/w500";
 
-  let tabImages = [];
-  const background = () => {
-    const tabMovies = movies.slice(0, 8);
-    // console.log(tabMovies);
-    for (let i = 0; i < tabMovies.length; i++) {
-      tabImages.push(`${urlImg}${tabMovies[i].poster_path}`);
-    }
-    // console.log(tabImages);
-    return tabImages;
-  };
+  // let tabImages = [];
+  // const background = () => {
+  //   const tabMovies = movies.slice(0, 8);
+  //   // console.log(tabMovies);
+  //   for (let i = 0; i < tabMovies.length; i++) {
+  //     tabImages.push(`${urlImg}${tabMovies[i].poster_path}`);
+  //   }
+  //   // console.log(tabImages);
+  //   return tabImages;
+  // };
 
   return isLoading ? (
     <Loader />

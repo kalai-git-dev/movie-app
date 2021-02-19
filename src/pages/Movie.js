@@ -117,9 +117,7 @@ function Movie() {
         <div className="video">
           <div className="video__infos">
             <p className="video__title">{movie.title}</p>
-            <YouTubeIcon fontSize="large" color="secondary">
-              youtube
-            </YouTubeIcon>
+            <YouTubeIcon fontSize="large" color="secondary"></YouTubeIcon>
           </div>
           <ReactPlayer
             controls
@@ -138,6 +136,3 @@ function Movie() {
 }
 
 export default Movie;
-//`https://api.themoviedb.org/3/movie/${id}/credits?api_key=0c768e12c4195fb75249a2aa9748f0a1` acteurs
-
-//

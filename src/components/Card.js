@@ -6,7 +6,7 @@ function Card({ movie }) {
   const urlImg = "https://image.tmdb.org/t/p/original";
   const voteColor = (number) => {
     let str = " ";
-    if (number > 7.5) {
+    if (number > 7) {
       str = "vote green";
     } else if (number > 5) {
       str = "vote orange";

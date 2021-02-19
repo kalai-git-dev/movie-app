@@ -13,10 +13,12 @@ function Movies() {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const [selectedValue, setSelectedValue] = useState(28);
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=0c768e12c4195fb75249a2aa9748f0a1&page=2"
+        "https://api.themoviedb.org/3/movie/popular?api_key=0c768e12c4195fb75249a2aa9748f0a1&page=1"
       );
       // console.log(response.data.results);
       setMovies(response.data.results);
@@ -29,16 +31,23 @@ function Movies() {
     <Loader />
   ) : (
     <div>
-      <Genres />
+      <Genres
+        selectedValue={selectedValue}
+        setSelectedValue={setSelectedValue}
+      />
       <BestFilms bestFilms={bestFilms} setBestFilms={setBestFilms} />
       <div className="container-movies">
-        {movies.map((movie) => {
-          return (
-            <Link to={`/movie/${movie.id}`} key={movie.id}>
-              <Card movie={movie} />
-            </Link>
-          );
-        })}
+        {movies
+          .filter((movie) => movie.genre_ids.includes(selectedValue))
+          .map((movie) => {
+            console.log(movie);
+
+            return (
+              <Link to={`/movie/${movie.id}`} key={movie.id}>
+                <Card movie={movie} />
+              </Link>
+            );
+          })}
       </div>
     </div>
   );
