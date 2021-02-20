@@ -14,7 +14,7 @@ function Genres({ setSelectedValue, selectedValue }) {
     };
     fetchData();
   }, [selectedValue]);
-  console.log(selectedValue);
+  // console.log(selectedValue);
 
   return (
     <div className="genres">

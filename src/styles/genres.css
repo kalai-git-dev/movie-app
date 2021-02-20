@@ -8,9 +8,14 @@
   flex-wrap: wrap;
 }
 .genres-item {
-  border: rgb(230, 220, 207) 2px solid;
-  color: antiquewhite;
+  border: rgb(138, 134, 130) 2px solid;
+  color: rgb(145, 141, 137);
   font-weight: 500;
   padding: 7px;
   border-radius: 3px;
+}
+.genres-item:hover {
+  border: rgb(235, 215, 196) 2px solid;
+  color: rgb(235, 215, 196);
+  cursor: pointer;
 }

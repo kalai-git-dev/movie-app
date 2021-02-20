@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import axios from "axios";
+import ReactPaginate from "react-paginate";
 
 import Card from "../components/Card";
 import Loader from "../components/Loader";
@@ -12,43 +13,69 @@ function Movies() {
   const [bestFilms, setBestFilms] = useState([]);
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
-  const [selectedValue, setSelectedValue] = useState(28);
+  const [pageNumber, setPageNumber] = useState(1);
+  const pageCount = 500;
+  const [selectedValue, setSelectedValue] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=0c768e12c4195fb75249a2aa9748f0a1&page=1"
+        `https://api.themoviedb.org/3/movie/popular?api_key=0c768e12c4195fb75249a2aa9748f0a1&page=${pageNumber}`
       );
-      // console.log(response.data.results);
+      // console.log(response.data);
       setMovies(response.data.results);
       setIsLoading(false);
     };
     fetchData();
-  }, []);
-
+  }, [pageNumber]);
+  // console.log(pageCount);
+  const handlePageClick = (e) => {
+    const selectedPage = e.selected;
+    console.log(e);
+    setPageNumber(selectedPage + 1);
+  };
   return isLoading ? (
     <Loader />
   ) : (
-    <div>
+    <div className="home">
       <Genres
         selectedValue={selectedValue}
         setSelectedValue={setSelectedValue}
       />
       <BestFilms bestFilms={bestFilms} setBestFilms={setBestFilms} />
       <div className="container-movies">
-        {movies
-          .filter((movie) => movie.genre_ids.includes(selectedValue))
-          .map((movie) => {
-            console.log(movie);
-
-            return (
-              <Link to={`/movie/${movie.id}`} key={movie.id}>
-                <Card movie={movie} />
-              </Link>
-            );
-          })}
+        {selectedValue === ""
+          ? movies.map((movie) => {
+              return (
+                <Link to={`/movie/${movie.id}`} key={movie.id}>
+                  <Card movie={movie} />
+                </Link>
+              );
+            })
+          : movies
+              .filter((movie) => movie.genre_ids.includes(selectedValue))
+              .map((movie) => {
+                return (
+                  <Link to={`/movie/${movie.id}`} key={movie.id}>
+                    <Card movie={movie} />
+                  </Link>
+                );
+              })}
+        {/* {movies.length > 20} */}
       </div>
+      <ReactPaginate
+        previousLabel={"prev"}
+        nextLabel={"next"}
+        breakLabel={"..."}
+        breakClassName={"break-me"}
+        pageCount={pageCount}
+        marginPagesDisplayed={2}
+        pageRangeDisplayed={4}
+        onPageChange={handlePageClick}
+        containerClassName={"pagination"}
+        subContainerClassName={"pages pagination"}
+        activeClassName={"active"}
+      />
     </div>
   );
 }
