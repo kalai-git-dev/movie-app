@@ -9,7 +9,7 @@ function Header() {
       <p
         className="logo"
         onClick={() => {
-          history.push("/acceuil");
+          history.push("/");
         }}
       >
         APP <span>MOVIES</span>

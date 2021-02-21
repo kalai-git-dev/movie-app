@@ -16,10 +16,10 @@ function App() {
     <Router>
       <Header />
       <Switch>
-        <Route path="/acceuil" component={Home} exact />
         <Route path="/movies" component={Movies} exact />
         <Route path="/movie/:id" component={Movie} exact />
         <Route path="/topRated" component={TopRated} exact />
+        <Route path="/" component={Home} exact />
       </Switch>
     </Router>
   );

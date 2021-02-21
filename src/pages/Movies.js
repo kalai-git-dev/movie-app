@@ -43,6 +43,7 @@ function Movies() {
         setSelectedValue={setSelectedValue}
       />
       <BestFilms bestFilms={bestFilms} setBestFilms={setBestFilms} />
+      <p className="films">Films</p>
       <div className="container-movies">
         {selectedValue === ""
           ? movies.map((movie) => {

@@ -17,15 +17,18 @@ function TopRated() {
   }, []);
 
   return (
-    <div className="container-movies">
-      {topRated.map((movie) => {
-        return (
-          <Link to={`/movie/${movie.id}`} key={movie.id}>
-            <Card movie={movie} />
-          </Link>
-        );
-      })}
-    </div>
+    <>
+      <p className="toprated__title">Films mieux notés</p>
+      <div className="container-movies">
+        {topRated.map((movie) => {
+          return (
+            <Link to={`/movie/${movie.id}`} key={movie.id}>
+              <Card movie={movie} />
+            </Link>
+          );
+        })}
+      </div>
+    </>
   );
 }
 

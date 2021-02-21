@@ -4,6 +4,9 @@
 body {
   background-color: rgba(8, 8, 8, 0.479);
 }
+#root {
+  background-color: #000;
+}
 
 @import "./styles/header.css";
 @import "./styles/home.css";
@@ -14,3 +17,4 @@ body {
 @import "./styles/credits.css";
 @import "./styles/cardSlider.css";
 @import "./styles/bestFilm.css";
+@import "./styles/topRated.css";
