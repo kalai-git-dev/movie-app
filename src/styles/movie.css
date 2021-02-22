@@ -94,7 +94,7 @@
 }
 /* ---------------video--------------- */
 .video {
-  margin: 20px;
+  margin: 40px;
 
   display: flex;
   flex-direction: column;
@@ -104,7 +104,7 @@
 .video__infos {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 .video__title {
   font-size: 25px;
@@ -112,4 +112,8 @@
   font-family: Arial, Helvetica, sans-serif;
   color: antiquewhite;
   margin-right: 10px;
+}
+.player {
+  box-shadow: 0px 0px 15px 5px #4d4c4c;
+  border-radius: 5px;
 }

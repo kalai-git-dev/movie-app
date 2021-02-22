@@ -2,6 +2,7 @@ import "./App.css";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import Footer from "./components/Footer";
 import Movies from "./pages/Movies";
 import Home from "./pages/Home";
 import Header from "./components/Header";
@@ -21,6 +22,7 @@ function App() {
         <Route path="/topRated" component={TopRated} exact />
         <Route path="/" component={Home} exact />
       </Switch>
+      <Footer />
     </Router>
   );
 }

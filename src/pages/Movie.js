@@ -120,6 +120,7 @@ function Movie() {
             <YouTubeIcon fontSize="large" color="secondary"></YouTubeIcon>
           </div>
           <ReactPlayer
+            className="player"
             controls
             width="1200px"
             height="800px"
