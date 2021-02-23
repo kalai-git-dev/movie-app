@@ -67,12 +67,12 @@
 }
 .pagination > .active > a {
   background-color: #f5f50a;
-  border-color: #f70303;
+  border-color: #e90253;
   color: #fff;
   opacity: 1;
 }
 .pagination > li > a {
-  border: 3px solid #f50404;
+  border: 3px solid #e90253;
   padding: 5px 10px;
   outline: none;
   cursor: pointer;
@@ -91,8 +91,8 @@
 .pagination > .active > span:hover,
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
-  background-color: #f50b03;
-  border-color: #f80404;
+  background-color: #e90253;
+  border-color: #e90253;
   outline: none;
 }
 .pagination > li > a,

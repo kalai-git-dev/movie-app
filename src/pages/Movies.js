@@ -31,9 +31,10 @@ function Movies() {
   // console.log(pageCount);
   const handlePageClick = (e) => {
     const selectedPage = e.selected;
-    console.log(e);
+    // console.log(e);
     setPageNumber(selectedPage + 1);
   };
+
   return isLoading ? (
     <Loader />
   ) : (
@@ -62,8 +63,8 @@ function Movies() {
                   </Link>
                 );
               })}
-        {/* {movies.length > 20} */}
       </div>
+
       <ReactPaginate
         previousLabel={"prev"}
         nextLabel={"next"}

@@ -11,11 +11,11 @@
   font-size: 30px;
   color: rgb(247, 245, 242);
   cursor: pointer;
-  text-shadow: -1px 0 rgb(0, 0, 0), 0 1px rgb(175, 18, 18),
+  text-shadow: -1px 0 rgb(0, 0, 0), 0 1px rgb(231, 10, 102),
     1px 0 rgb(192, 204, 21), 0 -1px rgb(160, 190, 23);
 }
 .logo > span {
-  color: #e90253;
+  color: #d10c51;
   font-weight: 800;
 }
 .navigation a {
