@@ -4,7 +4,8 @@ function Footer() {
   return (
     <div className="footer">
       <p>
-        Copyrigth &copy; Website crée par <span>KALAI</span>
+        Copyrigth &copy; <span>App MOVIES</span> Website crée par{" "}
+        <span>KALAI</span>
       </p>
     </div>
   );
