@@ -21,6 +21,9 @@ function Header() {
         <NavLink to="/topRated" exact activeClassName="selected">
           TOP RATED
         </NavLink>
+        <NavLink to="/favorite" exact activeClassName="selected">
+          Favories...
+        </NavLink>
       </div>
     </div>
   );

@@ -21,6 +21,10 @@
   right: 10px;
   color: beige;
   font-size: 25px;
+  transition: color 0.5s;
+}
+.icon-star:hover {
+  color: #e90253;
 }
 .card-title {
   position: absolute;

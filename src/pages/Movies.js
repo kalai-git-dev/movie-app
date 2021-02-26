@@ -5,17 +5,18 @@ import ReactPaginate from "react-paginate";
 
 import Card from "../components/Card";
 import Loader from "../components/Loader";
-import { Link } from "react-router-dom";
+
 import Genres from "../components/Genres";
 import BestFilms from "../components/BestFilms";
 
-function Movies() {
+function Movies({ setMovieFav, movieFav }) {
   const [bestFilms, setBestFilms] = useState([]);
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [pageNumber, setPageNumber] = useState(1);
   const pageCount = 500;
   const [selectedValue, setSelectedValue] = useState("");
+  console.log(movieFav);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,18 +50,24 @@ function Movies() {
         {selectedValue === ""
           ? movies.map((movie) => {
               return (
-                <Link to={`/movie/${movie.id}`} key={movie.id}>
-                  <Card movie={movie} />
-                </Link>
+                <Card
+                  setMovieFav={setMovieFav}
+                  movieFav={movieFav}
+                  key={movie.id}
+                  movie={movie}
+                />
               );
             })
           : movies
               .filter((movie) => movie.genre_ids.includes(selectedValue))
               .map((movie) => {
                 return (
-                  <Link to={`/movie/${movie.id}`} key={movie.id}>
-                    <Card movie={movie} />
-                  </Link>
+                  <Card
+                    setMovieFav={setMovieFav}
+                    movieFav={movieFav}
+                    key={movie.id}
+                    movie={movie}
+                  />
                 );
               })}
       </div>

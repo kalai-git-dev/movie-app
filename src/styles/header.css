@@ -24,8 +24,8 @@
   font-size: 25px;
   font-weight: bold;
 }
-.navigation a:nth-child(1) {
-  margin-right: 45px;
+.navigation a {
+  margin-right: 35px;
 }
 .navigation a:hover {
   color: rgb(175, 38, 95);
