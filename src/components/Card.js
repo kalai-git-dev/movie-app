@@ -35,19 +35,22 @@ function Card({ movie, setMovieFav, movieFav }) {
       <FontAwesomeIcon
         icon="star"
         className="icon-star"
-        onClick={() => {
-          const newMovieFav = [...movieFav];
-          for (let i = 0; i < newMovieFav.length; i++) {
-            if (newMovieFav[i].id === movie.id) {
-              // newMovieFav.slice(i, 1);
-
-              break;
-            } else {
-              newMovieFav.push(movie);
-            }
-          }
-          setMovieFav(newMovieFav);
-        }}
+        // onClick={() => {
+        //   let newMovieFav;
+        //   for (let i = 0; i < movieFav.length; i++) {
+        //     if (movieFav[i].id === movie.id) {
+        //       newMovieFav = [...movieFav];
+        //       newMovieFav.slice(i, 1);
+        //       setMovieFav(newMovieFav);
+        //       console.log(newMovieFav);
+        //     } else {
+        //       newMovieFav = [...movieFav];
+        //       newMovieFav.push(movie);
+        //       setMovieFav(newMovieFav);
+        //       console.log(newMovieFav);
+        //     }
+        //   }
+        // }}
       />
     </div>
   );
