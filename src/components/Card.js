@@ -2,6 +2,8 @@ import React from "react";
 import ReactStars from "react-rating-stars-component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import image from "../assets/empty.jpg";
+
 function Card({ movie, setMovieFav, movieFav }) {
   const urlImg = "https://image.tmdb.org/t/p/original";
   const voteColor = (number) => {
@@ -20,7 +22,7 @@ function Card({ movie, setMovieFav, movieFav }) {
       <Link to={`/movie/${movie.id}`} key={movie.id}>
         <img
           className="card-image"
-          src={urlImg + movie.poster_path}
+          src={movie.poster_path ? urlImg + movie.poster_path : image}
           alt="img"
           style={{ width: 300, height: 400 }}
         />

@@ -16,6 +16,7 @@ function TopRated() {
       );
       console.log(response);
       setTopRated(response.data.results);
+
       setPageCount(response.data.total_pages);
     };
     fetchData();

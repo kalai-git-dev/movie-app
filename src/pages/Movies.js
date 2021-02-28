@@ -9,14 +9,15 @@ import Loader from "../components/Loader";
 import Genres from "../components/Genres";
 import BestFilms from "../components/BestFilms";
 
-function Movies({ setMovieFav, movieFav }) {
+function Movies({ setMovieFav, movieFav, movies, setMovies, search }) {
   const [bestFilms, setBestFilms] = useState([]);
-  const [movies, setMovies] = useState([]);
+
   const [isLoading, setIsLoading] = useState(true);
   const [pageNumber, setPageNumber] = useState(1);
-  const pageCount = 500;
+  const [pageCount, setPageCount] = useState("");
+
   const [selectedValue, setSelectedValue] = useState("");
-  console.log(movieFav);
+  // console.log(movieFav);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,9 +27,10 @@ function Movies({ setMovieFav, movieFav }) {
       // console.log(response.data);
       setMovies(response.data.results);
       setIsLoading(false);
+      setPageCount(response.data.total_pages);
     };
     fetchData();
-  }, [pageNumber]);
+  }, [pageNumber, setMovies]);
   // console.log(pageCount);
   const handlePageClick = (e) => {
     const selectedPage = e.selected;
@@ -46,6 +48,7 @@ function Movies({ setMovieFav, movieFav }) {
       />
       <BestFilms bestFilms={bestFilms} setBestFilms={setBestFilms} />
       <p className="films">Films</p>
+
       <div className="container-movies">
         {selectedValue === ""
           ? movies.map((movie) => {
@@ -73,8 +76,8 @@ function Movies({ setMovieFav, movieFav }) {
       </div>
 
       <ReactPaginate
-        previousLabel={"prev"}
-        nextLabel={"next"}
+        previousLabel={"Prev"}
+        nextLabel={"Next"}
         breakLabel={"..."}
         breakClassName={"break-me"}
         pageCount={pageCount}
