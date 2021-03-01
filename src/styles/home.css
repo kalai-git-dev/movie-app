@@ -37,7 +37,8 @@
   background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
   color: white;
   font-weight: bold;
-  border: 3px solid #f1f1f1;
+  border: 3px solid #ffffff;
+  border-radius: 10px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -48,6 +49,15 @@
   text-align: center;
   text-decoration: none;
   line-height: 22px;
+}
+.banner__text > h1 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #e90253;
+  margin: 20px;
+}
+.banner__text > p {
+  font-size: 18px;
 }
 .banner__text > .MuiSvgIcon-root {
   font-size: 60px;

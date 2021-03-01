@@ -11,14 +11,13 @@ import Header from "./components/Header";
 import Movie from "./pages/Movie";
 import TopRated from "./pages/TopRated";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-library.add(faStar);
+import { faStar, faPlay } from "@fortawesome/free-solid-svg-icons";
+library.add(faStar, faPlay);
 
 function App() {
   const [movieFav, setMovieFav] = useState([]);
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
-  //link youtube
 
   return (
     <Router>

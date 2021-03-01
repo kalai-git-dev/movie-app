@@ -34,7 +34,9 @@ function Movie() {
         `https://api.themoviedb.org/3/movie/${id}/videos?api_key=0c768e12c4195fb75249a2aa9748f0a1`
       );
       console.log(response.data.results);
-      setLinkYoutube(response.data.results[0].key);
+      setLinkYoutube(
+        response.data.results.length > 0 ? response.data.results[0].key : null
+      );
     };
 
     fetchData();

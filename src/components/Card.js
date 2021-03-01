@@ -33,6 +33,9 @@ function Card({ movie, setMovieFav, movieFav }) {
         <div className="stars">
           <ReactStars count={movie.vote_average} size={24} color="#F5ED06" />
         </div>
+        <div className="icon">
+          <FontAwesomeIcon icon="play" className="icon-play" />
+        </div>
       </Link>
       <FontAwesomeIcon
         icon="star"
