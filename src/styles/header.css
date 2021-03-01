@@ -8,15 +8,37 @@
   border-bottom: 2px solid rgb(65, 63, 63);
 }
 .logo {
-  font-size: 30px;
+  font-size: 25px;
   color: rgb(247, 245, 242);
   cursor: pointer;
   text-shadow: -1px 0 rgb(0, 0, 0), 0 1px rgb(231, 10, 102),
-    1px 0 rgb(192, 204, 21), 0 -1px rgb(160, 190, 23);
+    1px 0 rgb(192, 204, 21), 0 -1px rgb(248, 232, 7);
 }
 .logo > span {
   color: #d10c51;
   font-weight: 800;
+  font-size: 40px;
+}
+.input-search {
+  padding: 10px;
+  border-radius: 30px;
+  outline-style: none;
+  border: none;
+  width: 270px;
+  background-color: rgb(78, 76, 76);
+  color: aliceblue;
+  font-weight: 500;
+}
+.input-search::placeholder {
+  color: rgba(240, 248, 255, 0.479);
+}
+.button-search {
+  padding: 10px;
+  border-radius: 10px;
+  outline-style: none;
+  border: none;
+  background-color: #d10c51;
+  margin-left: 5px;
 }
 .navigation {
   display: flex;

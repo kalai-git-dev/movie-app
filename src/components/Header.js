@@ -27,6 +27,7 @@ function Header({ setSearch, search, setMovies, movieFav }) {
       </p>
       <form onSubmit={handlesubmit}>
         <input
+          className="input-search"
           value={search}
           type="text"
           placeholder="Search"
@@ -35,6 +36,7 @@ function Header({ setSearch, search, setMovies, movieFav }) {
           }}
         />
         <button
+          className="button-search"
           onClick={() => {
             history.push("/search");
           }}

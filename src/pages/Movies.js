@@ -48,7 +48,7 @@ function Movies({ setMovieFav, movieFav, movies, setMovies, search }) {
       />
       <BestFilms bestFilms={bestFilms} setBestFilms={setBestFilms} />
       <p className="films">Films</p>
-      <p className="search">recherche : {search}</p>
+
       <div className="container-movies">
         {selectedValue === ""
           ? movies.map((movie) => {
