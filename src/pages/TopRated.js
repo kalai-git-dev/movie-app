@@ -14,7 +14,7 @@ function TopRated() {
       const response = await axios.get(
         `https://api.themoviedb.org/3/movie/top_rated?api_key=0c768e12c4195fb75249a2aa9748f0a1&language=en-US&page=${pageNumber}`
       );
-      // console.log(response);
+      console.log(response.data.results);
       setTopRated(response.data.results);
 
       setPageCount(response.data.total_pages);

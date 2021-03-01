@@ -51,15 +51,10 @@ function Header({ setSearch, search, setMovies, movieFav }) {
         <NavLink to="/topRated" exact activeClassName="selected">
           TOP RATED
         </NavLink>
-        {movieFav.length > 0 ? (
-          <NavLink to="/favorite" exact activeClassName="selected">
-            Favories...
-          </NavLink>
-        ) : (
-          <NavLink to="/favorite" exact ClassName="not-selected">
-            Favories...
-          </NavLink>
-        )}
+
+        <NavLink to="/favorite" exact activeClassName="selected">
+          FAVORIS...
+        </NavLink>
       </div>
     </div>
   );

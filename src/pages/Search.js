@@ -3,7 +3,7 @@ import Card from "../components/Card";
 function Search({ movies }) {
   return (
     <div className="search-page">
-      <p>les resultats de recherche :</p>
+      <p>les resultats de la recherche :</p>
       <hr />
       <div className="search-card">
         {movies.map((movie) => {

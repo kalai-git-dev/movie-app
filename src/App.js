@@ -19,7 +19,6 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
   //link youtube
-  const [linkYoutube, setLinkYoutube] = useState("");
 
   return (
     <Router>
@@ -41,7 +40,7 @@ function App() {
         </Route>
 
         <Route path="/movie/:id" exact>
-          <Movie linkYoutube={linkYoutube} setLinkYoutube={setLinkYoutube} />
+          <Movie />
         </Route>
         <Route path="/topRated" component={TopRated} exact />
         <Route path="/favorite" exact>

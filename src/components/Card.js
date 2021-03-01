@@ -41,7 +41,6 @@ function Card({ movie, setMovieFav, movieFav }) {
           const newMovieFav = [...movieFav];
           newMovieFav.push(movie);
           setMovieFav(newMovieFav);
-          console.log(newMovieFav);
         }}
       />
     </div>
