@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 
-function Header({ setSearch, search, setMovies }) {
+function Header({ setSearch, search, setMovies, movieFav }) {
   const history = useHistory();
   const handlesubmit = async (event) => {
     event.preventDefault();
@@ -49,9 +49,15 @@ function Header({ setSearch, search, setMovies }) {
         <NavLink to="/topRated" exact activeClassName="selected">
           TOP RATED
         </NavLink>
-        <NavLink to="/favorite" exact activeClassName="selected">
-          Favories...
-        </NavLink>
+        {movieFav.length > 0 ? (
+          <NavLink to="/favorite" exact activeClassName="selected">
+            Favories...
+          </NavLink>
+        ) : (
+          <NavLink to="/favorite" exact ClassName="not-selected">
+            Favories...
+          </NavLink>
+        )}
       </div>
     </div>
   );

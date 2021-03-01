@@ -34,7 +34,16 @@ function Card({ movie, setMovieFav, movieFav }) {
           <ReactStars count={movie.vote_average} size={24} color="#F5ED06" />
         </div>
       </Link>
-      <FontAwesomeIcon icon="star" className="icon-star" />
+      <FontAwesomeIcon
+        icon="star"
+        className="icon-star"
+        onClick={() => {
+          const newMovieFav = [...movieFav];
+          newMovieFav.push(movie);
+          setMovieFav(newMovieFav);
+          console.log(newMovieFav);
+        }}
+      />
     </div>
   );
 }

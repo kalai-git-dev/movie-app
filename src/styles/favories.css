@@ -1,0 +1,27 @@
+.favories {
+  margin-top: 50px;
+  min-height: calc(100vh - 250px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.favories-container {
+  max-width: 90vw;
+  margin: 40px auto;
+  background-color: rgb(3, 3, 3);
+  padding: 30px 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.favories h2 {
+  color: #fff;
+  font-size: 50px;
+  font-weight: 600;
+}
+.empty-favories {
+  color: antiquewhite;
+  font-size: 50px;
+  font-weight: 700;
+}

@@ -18,12 +18,18 @@
   color: #d10c51;
   font-weight: 800;
 }
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 .navigation a {
   text-decoration: none;
-  color: rgb(102, 219, 219);
+  color: rgba(102, 219, 219);
   font-size: 25px;
   font-weight: bold;
 }
+
 .navigation a {
   margin-right: 35px;
 }
@@ -34,4 +40,10 @@
   border-top: 3px solid rgb(240, 236, 22);
   transition: border-top 0.5s ease-in-out;
   color: #e90253;
+}
+.not-selected {
+  text-decoration: none;
+  color: rgb(178, 184, 184);
+  font-size: 25px;
+  font-weight: bold;
 }

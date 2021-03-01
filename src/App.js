@@ -23,7 +23,12 @@ function App() {
 
   return (
     <Router>
-      <Header setSearch={setSearch} search={search} setMovies={setMovies} />
+      <Header
+        setSearch={setSearch}
+        search={search}
+        setMovies={setMovies}
+        movieFav={movieFav}
+      />
       <Switch>
         <Route path="/movies">
           <Movies
