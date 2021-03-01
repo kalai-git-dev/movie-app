@@ -7,15 +7,14 @@ import Loader from "../components/Loader";
 import ReactPlayer from "react-player";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 
-function Movie() {
+function Movie({ linkYoutube, setLinkYoutube }) {
   const { id } = useParams();
   const [movie, setMovie] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  const [linkYoutube, setLinkYoutube] = useState("");
   const urlYoutube = "https://www.youtube.com/watch?v=";
-
   const urlImg = "https://image.tmdb.org/t/p/w500";
 
+  console.log(linkYoutube);
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
@@ -33,13 +32,12 @@ function Movie() {
       const response = await axios.get(
         `https://api.themoviedb.org/3/movie/${id}/videos?api_key=0c768e12c4195fb75249a2aa9748f0a1`
       );
-      // console.log(response.data.results[0].key);
+      // console.log(response.data.results);
       setLinkYoutube(response.data.results[0].key);
-      // setIsLoading(false);
     };
 
     fetchData();
-  }, [id]);
+  }, [id, setLinkYoutube]);
 
   const countries = (production) => {
     let str = "";

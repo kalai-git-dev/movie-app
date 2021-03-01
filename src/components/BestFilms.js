@@ -19,7 +19,7 @@ function BestFilms({ bestFilms, setBestFilms }) {
       const response = await axios.get(
         "https://api.themoviedb.org/3/discover/movie?api_key=0c768e12c4195fb75249a2aa9748f0a1&primary_release_year=2020&sort_by=vote_average.desc"
       );
-      console.log(response.data.results);
+      // console.log(response.data.results);
       setBestFilms(response.data.results);
       setIsLoading(false);
     };

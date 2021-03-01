@@ -93,4 +93,3 @@ function Movies({ setMovieFav, movieFav, movies, setMovies, search }) {
 }
 
 export default Movies;
-//https://api.themoviedb.org/3/movie/popular?api_key=0c768e12c4195fb75249a2aa9748f0a1

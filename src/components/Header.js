@@ -1,9 +1,20 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 
-function Header({ setSearch, handlesubmit, search }) {
+function Header({ setSearch, search, setMovies }) {
   const history = useHistory();
+  const handlesubmit = async (event) => {
+    event.preventDefault();
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/search/movie?api_key=0c768e12c4195fb75249a2aa9748f0a1&language=en-US&query=${search}`
+    );
+    console.log(response.data.results);
+    setMovies(response.data.results);
+    setSearch("");
+  };
+
   return (
     <div className="header">
       <p
@@ -25,7 +36,7 @@ function Header({ setSearch, handlesubmit, search }) {
         />
         <button
           onClick={() => {
-            history.push("/movies/search");
+            history.push("/search");
           }}
         >
           search

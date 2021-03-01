@@ -9,7 +9,7 @@ function Genres({ setSelectedValue, selectedValue }) {
         "https://api.themoviedb.org/3/genre/movie/list?api_key=0c768e12c4195fb75249a2aa9748f0a1&language=en-US&with_genres=" +
           selectedValue
       );
-      console.log(response.data.genres);
+      // console.log(response.data.genres);
       setGenres(response.data.genres);
     };
     fetchData();

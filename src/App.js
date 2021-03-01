@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./App.css";
-import axios from "axios";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Footer from "./components/Footer";
@@ -19,24 +18,12 @@ function App() {
   const [movieFav, setMovieFav] = useState([]);
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
-
-  const handlesubmit = async (event) => {
-    event.preventDefault();
-    const response = await axios.get(
-      `https://api.themoviedb.org/3/search/movie?api_key=0c768e12c4195fb75249a2aa9748f0a1&language=en-US&query=${search}`
-    );
-    // console.log(response.data.results);
-    setMovies(response.data.results);
-    setSearch("");
-  };
+  //link youtube
+  const [linkYoutube, setLinkYoutube] = useState("");
 
   return (
     <Router>
-      <Header
-        setSearch={setSearch}
-        handlesubmit={handlesubmit}
-        search={search}
-      />
+      <Header setSearch={setSearch} search={search} setMovies={setMovies} />
       <Switch>
         <Route path="/movies">
           <Movies
@@ -48,14 +35,16 @@ function App() {
           />
         </Route>
 
-        <Route path="/movie/:id" component={Movie} exact />
+        <Route path="/movie/:id" exact>
+          <Movie linkYoutube={linkYoutube} setLinkYoutube={setLinkYoutube} />
+        </Route>
         <Route path="/topRated" component={TopRated} exact />
         <Route path="/favorite" exact>
           <Favories movieFav={movieFav} />
         </Route>
 
-        <Route path="/movies/search">
-          <Search />
+        <Route path="/search" exact>
+          <Search movies={movies} />
         </Route>
         <Route path="/" component={Home} exact />
       </Switch>
