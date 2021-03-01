@@ -1,0 +1,25 @@
+.search-page {
+  margin-top: 50px;
+  min-height: calc(100vh - 250px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.search-page > p {
+  color: antiquewhite;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 15px 40px;
+}
+.search-card {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 90vw;
+  margin: 140px auto;
+}
+hr {
+  width: 50%;
+  color: rgb(133, 136, 136);
+  height: 1px;
+}

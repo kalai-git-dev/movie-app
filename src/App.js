@@ -49,7 +49,7 @@ function App() {
         </Route>
 
         <Route path="/search" exact>
-          <Search movies={movies} />
+          <Search movies={movies} search={search} />
         </Route>
         <Route path="/" component={Home} exact />
       </Switch>
