@@ -1,7 +1,7 @@
 .header {
   height: 80px;
   width: 100vw;
-  background-color: rgb(252, 247, 247);
+  background-color: rgb(4, 4, 4);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -15,10 +15,11 @@
 }
 .logo {
   font-size: 25px;
-  color: rgb(247, 245, 242);
+  color: rgb(254, 153, 2);
   cursor: pointer;
   text-shadow: -1px 0 rgb(0, 0, 0), 0 1px rgb(231, 10, 102),
     1px 0 rgb(192, 204, 21), 0 -1px rgb(248, 232, 7);
+  margin-right: 10px;
 }
 .logo > span {
   color: #d10c51;
@@ -64,7 +65,7 @@
   color: rgb(175, 38, 95);
 }
 .navigation a.selected {
-  border-top: 3px solid rgb(240, 236, 22);
+  border-top: 3px solid rgb(248, 179, 5);
   transition: border-top 0.5s ease-in-out;
   color: #e90253;
 }

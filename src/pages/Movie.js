@@ -60,7 +60,9 @@ function Movie() {
     <>
       <div className="movie-container">
         <div className="movie-body">
-          <img src={urlImg + movie.poster_path} alt={movie.title} />
+          <div>
+            <img src={urlImg + movie.poster_path} alt={movie.title} />
+          </div>
 
           <div className="movie-infos">
             <p className="movie-title">{movie.title}</p>

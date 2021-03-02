@@ -45,6 +45,17 @@
   .bestFilms__title {
     display: none;
   }
+  .movie-body {
+    flex-direction: column;
+  }
+  .video__title {
+    font-size: 25px;
+    white-space: nowrap;
+  }
+  .player {
+    width: 600px !important;
+    height: 400px !important;
+  }
 }
 @media screen and (max-width: 375px) {
   .logo {
@@ -55,5 +66,9 @@
   }
   .input-search {
     width: 170px;
+  }
+  .player {
+    width: 375px !important;
+    height: 300px !important;
   }
 }
