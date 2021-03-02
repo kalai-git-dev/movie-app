@@ -9,7 +9,14 @@ import Loader from "../components/Loader";
 import Genres from "../components/Genres";
 import BestFilms from "../components/BestFilms";
 
-function Movies({ setMovieFav, movieFav, movies, setMovies, search }) {
+function Movies({
+  setMovieFav,
+  movieFav,
+  movies,
+  setMovies,
+  // setFavory,
+  // favory,
+}) {
   const [bestFilms, setBestFilms] = useState([]);
 
   const [isLoading, setIsLoading] = useState(true);
@@ -58,6 +65,8 @@ function Movies({ setMovieFav, movieFav, movies, setMovies, search }) {
                   movieFav={movieFav}
                   key={movie.id}
                   movie={movie}
+                  // favory={favory}
+                  // setFavory={setFavory}
                 />
               );
             })
@@ -82,7 +91,7 @@ function Movies({ setMovieFav, movieFav, movies, setMovies, search }) {
         breakClassName={"break-me"}
         pageCount={pageCount}
         marginPagesDisplayed={2}
-        pageRangeDisplayed={4}
+        pageRangeDisplayed={3}
         onPageChange={handlePageClick}
         containerClassName={"pagination"}
         subContainerClassName={"pages pagination"}

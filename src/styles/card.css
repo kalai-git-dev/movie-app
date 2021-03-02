@@ -26,6 +26,9 @@
 .icon-star:hover {
   color: #e90253;
 }
+.icon-star.favory {
+  color: #e90253;
+}
 .icon {
   display: none;
   width: 70px;
@@ -90,4 +93,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/*   -------------------icon-------------------   */
+.burger-icon {
+  display: none;
+}
+.navigation.hidden {
+  display: none;
 }

@@ -1,11 +1,17 @@
 .header {
   height: 80px;
   width: 100vw;
-  background-color: rgb(8, 8, 8);
+  background-color: rgb(252, 247, 247);
   display: flex;
   justify-content: space-around;
   align-items: center;
   border-bottom: 2px solid rgb(65, 63, 63);
+
+  z-index: 100;
+}
+.header-left {
+  display: flex;
+  justify-content: space-between;
 }
 .logo {
   font-size: 25px;
@@ -51,11 +57,9 @@
   color: rgba(102, 219, 219);
   font-size: 25px;
   font-weight: bold;
-}
-
-.navigation a {
   margin-right: 35px;
 }
+
 .navigation a:hover {
   color: rgb(175, 38, 95);
 }

@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import ReorderIcon from "@material-ui/icons/Reorder";
+import CancelIcon from "@material-ui/icons/Cancel";
+
 import axios from "axios";
 
-function Header({ setSearch, search, setMovies, movieFav }) {
+function Header({ setSearch, search, setMovies }) {
+  const [showMenu, setShowMenu] = useState(false);
   const history = useHistory();
   const handlesubmit = async (event) => {
     event.preventDefault();
@@ -17,44 +21,80 @@ function Header({ setSearch, search, setMovies, movieFav }) {
 
   return (
     <div className="header">
-      <p
-        className="logo"
-        onClick={() => {
-          history.push("/");
-        }}
-      >
-        APP <span>MOVIES</span>
-      </p>
-      <form onSubmit={handlesubmit}>
-        <input
-          className="input-search"
-          value={search}
-          type="text"
-          placeholder="Search"
-          onChange={(event) => {
-            setSearch(event.target.value);
-          }}
-        />
-        <button
-          className="button-search"
+      <div className="header-left">
+        <p
+          className="logo"
           onClick={() => {
-            history.push("/search");
+            history.push("/");
           }}
         >
-          search
-        </button>
-      </form>
-      <div className="navigation">
-        <NavLink to="/movies" exact activeClassName="selected">
+          APP <span>MOVIES</span>
+        </p>
+        <form onSubmit={handlesubmit}>
+          <input
+            className="input-search"
+            value={search}
+            type="text"
+            placeholder="Search"
+            onChange={(event) => {
+              setSearch(event.target.value);
+            }}
+          />
+          <button
+            className="button-search"
+            onClick={() => {
+              history.push("/search");
+            }}
+          >
+            search
+          </button>
+        </form>
+      </div>
+
+      <div className={showMenu ? "navigation active" : "navigation"}>
+        <NavLink
+          to="/movies"
+          exact
+          activeClassName="selected"
+          onClick={() => {
+            setShowMenu(false);
+          }}
+        >
           MOVIES
         </NavLink>
-        <NavLink to="/topRated" exact activeClassName="selected">
+        <NavLink
+          to="/topRated"
+          exact
+          activeClassName="selected"
+          onClick={() => {
+            setShowMenu(false);
+          }}
+        >
           TOP RATED
         </NavLink>
 
-        <NavLink to="/favorite" exact activeClassName="selected">
+        <NavLink
+          to="/favorite"
+          exact
+          activeClassName="selected"
+          onClick={() => {
+            setShowMenu(false);
+          }}
+        >
           FAVORIS...
         </NavLink>
+      </div>
+      <div
+        className="burger-icon"
+        onClick={() => {
+          setShowMenu(!showMenu);
+        }}
+      >
+        {showMenu ? (
+          <CancelIcon style={{ fontSize: 40 }} />
+        ) : (
+          <ReorderIcon style={{ fontSize: 40 }} />
+        )}
       </div>
     </div>
   );

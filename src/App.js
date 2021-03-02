@@ -11,11 +11,12 @@ import Header from "./components/Header";
 import Movie from "./pages/Movie";
 import TopRated from "./pages/TopRated";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faStar, faPlay } from "@fortawesome/free-solid-svg-icons";
-library.add(faStar, faPlay);
+import { faStar, faPlay, faBars } from "@fortawesome/free-solid-svg-icons";
+library.add(faStar, faPlay, faBars);
 
 function App() {
   const [movieFav, setMovieFav] = useState([]);
+  // const [favory, setFavory] = useState(false);
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
 
@@ -35,6 +36,8 @@ function App() {
             movies={movies}
             setMovies={setMovies}
             search={search}
+            // favory={favory}
+            // setFavory={setFavory}
           />
         </Route>
 
