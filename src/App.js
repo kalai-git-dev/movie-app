@@ -25,12 +25,6 @@ function App() {
 
     setMovieFav(newMovieFav);
   };
-  const removeFavorites = (movie) => {
-    const newMovieFav = movieFav.filter((item) => {
-      item.id !== movie.id;
-    });
-    setMovieFav(newMovieFav);
-  };
 
   return (
     <Router>
@@ -48,7 +42,7 @@ function App() {
             movies={movies}
             setMovies={setMovies}
             search={search}
-            handleFavoriteClick={addFavorites}
+            addFavorites={addFavorites}
           />
         </Route>
 
@@ -57,7 +51,11 @@ function App() {
         </Route>
         <Route path="/topRated" component={TopRated} exact />
         <Route path="/favorite" exact>
-          <Favories movieFav={movieFav} handleFavoriteClick={removeFavorites} />
+          <Favories
+            movieFav={movieFav}
+            // removeFavorites={removeFavorites}
+            setMovieFav={setMovieFav}
+          />
         </Route>
 
         <Route path="/search" exact>

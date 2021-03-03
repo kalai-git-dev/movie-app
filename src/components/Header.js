@@ -91,9 +91,9 @@ function Header({ setSearch, search, setMovies }) {
         }}
       >
         {showMenu ? (
-          <CancelIcon style={{ fontSize: 40 }} />
+          <CancelIcon style={{ fontSize: 40, color: "white" }} />
         ) : (
-          <ReorderIcon style={{ fontSize: 40 }} />
+          <ReorderIcon style={{ fontSize: 40, color: "white" }} />
         )}
       </div>
     </div>

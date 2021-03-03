@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import image from "../assets/empty.jpg";
 
-function Card({ movie, addFavorites }) {
+function Card({ movie, movieFav, setMovieFav, handleClick }) {
   const urlImg = "https://image.tmdb.org/t/p/original";
   const voteColor = (number) => {
     let str = " ";
@@ -17,6 +17,7 @@ function Card({ movie, addFavorites }) {
     }
     return str;
   };
+
   return (
     <div className="card">
       <Link to={`/movie/${movie.id}`} key={movie.id}>
@@ -40,7 +41,7 @@ function Card({ movie, addFavorites }) {
       <FontAwesomeIcon
         icon="star"
         className="icon-star"
-        onClick={() => addFavorites}
+        onClick={() => handleClick(movie)}
       />
     </div>
   );

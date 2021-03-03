@@ -9,13 +9,7 @@ import Loader from "../components/Loader";
 import Genres from "../components/Genres";
 import BestFilms from "../components/BestFilms";
 
-function Movies({
-  setMovieFav,
-  movieFav,
-  movies,
-  setMovies,
-  handleFavoriteClick,
-}) {
+function Movies({ setMovieFav, movieFav, movies, setMovies, addFavorites }) {
   const [bestFilms, setBestFilms] = useState([]);
 
   const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +17,6 @@ function Movies({
   const [pageCount, setPageCount] = useState("");
 
   const [selectedValue, setSelectedValue] = useState("");
-  // console.log(movieFav);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -64,7 +57,7 @@ function Movies({
                   movieFav={movieFav}
                   key={movie.id}
                   movie={movie}
-                  handleFavoriteClick={handleFavoriteClick}
+                  handleClick={addFavorites}
                 />
               );
             })
@@ -77,7 +70,7 @@ function Movies({
                     movieFav={movieFav}
                     key={movie.id}
                     movie={movie}
-                    handleFavoriteClick={handleFavoriteClick}
+                    handleClick={addFavorites}
                   />
                 );
               })}
