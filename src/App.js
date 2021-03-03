@@ -16,9 +16,21 @@ library.add(faStar, faPlay, faBars);
 
 function App() {
   const [movieFav, setMovieFav] = useState([]);
-  // const [favory, setFavory] = useState(false);
+
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
+
+  const addFavorites = (movie) => {
+    const newMovieFav = [...movieFav, movie];
+
+    setMovieFav(newMovieFav);
+  };
+  const removeFavorites = (movie) => {
+    const newMovieFav = movieFav.filter((item) => {
+      item.id !== movie.id;
+    });
+    setMovieFav(newMovieFav);
+  };
 
   return (
     <Router>
@@ -36,8 +48,7 @@ function App() {
             movies={movies}
             setMovies={setMovies}
             search={search}
-            // favory={favory}
-            // setFavory={setFavory}
+            handleFavoriteClick={addFavorites}
           />
         </Route>
 
@@ -46,7 +57,7 @@ function App() {
         </Route>
         <Route path="/topRated" component={TopRated} exact />
         <Route path="/favorite" exact>
-          <Favories movieFav={movieFav} />
+          <Favories movieFav={movieFav} handleFavoriteClick={removeFavorites} />
         </Route>
 
         <Route path="/search" exact>

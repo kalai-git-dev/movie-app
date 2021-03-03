@@ -14,8 +14,7 @@ function Movies({
   movieFav,
   movies,
   setMovies,
-  // setFavory,
-  // favory,
+  handleFavoriteClick,
 }) {
   const [bestFilms, setBestFilms] = useState([]);
 
@@ -65,8 +64,7 @@ function Movies({
                   movieFav={movieFav}
                   key={movie.id}
                   movie={movie}
-                  // favory={favory}
-                  // setFavory={setFavory}
+                  handleFavoriteClick={handleFavoriteClick}
                 />
               );
             })
@@ -79,6 +77,7 @@ function Movies({
                     movieFav={movieFav}
                     key={movie.id}
                     movie={movie}
+                    handleFavoriteClick={handleFavoriteClick}
                   />
                 );
               })}
