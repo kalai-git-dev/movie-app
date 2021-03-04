@@ -66,7 +66,7 @@ function App() {
         </Route>
 
         <Route path="/search" exact>
-          <Search movies={movies} search={search} />
+          <Search movies={movies} search={search} addFavorites={addFavorites} />
         </Route>
         <Route path="/" component={Home} exact />
       </Switch>

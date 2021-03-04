@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Card from "../components/Card";
-import { Link } from "react-router-dom";
+
 import ReactPaginate from "react-paginate";
 
 function TopRated({ addFavorites }) {
