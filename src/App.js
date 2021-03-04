@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -20,17 +20,29 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
 
+  // local storage
+  const saveLocalStorage = (items) => {
+    localStorage.setItem("movie-favorites", JSON.stringify(items));
+  };
+  // addFavorites
   const addFavorites = (movie) => {
     const newMovieFav = [...movieFav, movie];
 
     setMovieFav(newMovieFav);
+    saveLocalStorage(newMovieFav);
   };
+  // remove favorites
   const removeFavorites = (movie) => {
     const newMovieFav = movieFav.filter((item) => {
       return item.id !== movie.id;
     });
     setMovieFav(newMovieFav);
+    saveLocalStorage(newMovieFav);
   };
+  useEffect(() => {
+    const moviesFavorites = JSON.parse(localStorage.getItem("movie-favorites"));
+    setMovieFav(moviesFavorites);
+  }, []);
   return (
     <Router>
       <Header
