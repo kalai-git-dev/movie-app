@@ -43,7 +43,7 @@ function Header({ setSearch, search, setMovies }) {
           <button
             className="button-search"
             onClick={() => {
-              history.push("/search");
+              search.length !== 0 && history.push("/search");
             }}
           >
             search
