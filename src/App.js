@@ -16,7 +16,6 @@ library.add(faStar, faPlay, faBars);
 
 function App() {
   const [movieFav, setMovieFav] = useState([]);
-
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
 
