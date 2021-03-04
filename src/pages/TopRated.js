@@ -4,7 +4,7 @@ import Card from "../components/Card";
 import { Link } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 
-function TopRated() {
+function TopRated({ addFavorites }) {
   const [topRated, setTopRated] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
   const [pageCount, setPageCount] = useState("");
@@ -33,11 +33,7 @@ function TopRated() {
       <p className="toprated__title">Films mieux notés</p>
       <div className="container-movies">
         {topRated.map((movie) => {
-          return (
-            <Link to={`/movie/${movie.id}`} key={movie.id}>
-              <Card movie={movie} />
-            </Link>
-          );
+          return <Card movie={movie} handleClick={addFavorites} />;
         })}
       </div>
       <ReactPaginate

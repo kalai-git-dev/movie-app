@@ -25,7 +25,12 @@ function App() {
 
     setMovieFav(newMovieFav);
   };
-
+  const removeFavorites = (movie) => {
+    const newMovieFav = movieFav.filter((item) => {
+      return item.id !== movie.id;
+    });
+    setMovieFav(newMovieFav);
+  };
   return (
     <Router>
       <Header
@@ -49,11 +54,13 @@ function App() {
         <Route path="/movie/:id" exact>
           <Movie />
         </Route>
-        <Route path="/topRated" component={TopRated} exact />
+        <Route path="/topRated">
+          <TopRated addFavorites={addFavorites} />
+        </Route>
         <Route path="/favorite" exact>
           <Favories
             movieFav={movieFav}
-            // removeFavorites={removeFavorites}
+            removeFavorites={removeFavorites}
             setMovieFav={setMovieFav}
           />
         </Route>

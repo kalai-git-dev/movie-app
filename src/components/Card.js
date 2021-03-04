@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import image from "../assets/empty.jpg";
 
-function Card({ movie, movieFav, setMovieFav, handleClick }) {
+function Card({ movie, handleClick }) {
   const urlImg = "https://image.tmdb.org/t/p/original";
   const voteColor = (number) => {
     let str = " ";

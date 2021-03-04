@@ -1,13 +1,7 @@
 import React from "react";
 import Card from "../components/Card";
 
-function Favories({ movieFav, setMovieFav }) {
-  const removeFavorites = (movie) => {
-    const newMovieFav = movieFav.filter((item) => {
-      return item.id !== movie.id;
-    });
-    setMovieFav(newMovieFav);
-  };
+function Favories({ movieFav, removeFavorites }) {
   console.log(movieFav);
   return (
     <div className="favories">
