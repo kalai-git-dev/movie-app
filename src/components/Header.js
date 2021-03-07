@@ -46,7 +46,7 @@ function Header({ setSearch, search, setMovies }) {
               search.length !== 0 && history.push("/search");
             }}
           >
-            search
+            Search
           </button>
         </form>
       </div>

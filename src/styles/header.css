@@ -44,8 +44,15 @@
   border-radius: 10px;
   outline-style: none;
   border: none;
-  background-color: #d10c51;
   margin-left: 5px;
+  cursor: pointer;
+  background-color: #d63e73;
+  font-weight: 700;
+  color: aliceblue;
+}
+.button-search:hover {
+  background-color: #d10c51;
+  transform: scale(1.02);
 }
 .navigation {
   display: flex;
@@ -63,7 +70,7 @@
 }
 
 .navigation a:hover {
-  color: rgb(175, 38, 95);
+  color: rgb(228, 13, 102);
 }
 .navigation a.selected {
   border-top: 3px solid rgb(248, 179, 5);

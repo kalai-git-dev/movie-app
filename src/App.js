@@ -66,7 +66,7 @@ function App() {
           <Movie />
         </Route>
         <Route path="/topRated">
-          <TopRated addFavorites={addFavorites} />
+          <TopRated addFavorites={addFavorites} exact />
         </Route>
         <Route path="/favorite" exact>
           <Favories
