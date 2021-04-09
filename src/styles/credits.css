@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  padding: 50px;
+  padding: 49px;
 }
 .credit-item {
   width: 180px;
